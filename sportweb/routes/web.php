@@ -12,3 +12,5 @@
 */
 
 Route::get('/user/register', 'UsersController@register');
+
+Route::get('top', 'TopsController@index');
