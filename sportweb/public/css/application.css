@@ -1,0 +1,8 @@
+html {
+    font-size: 62.5%;
+    font-size: calc(62.5% + 0.5vw)
+    }
+  
+  .user {
+    background-color: #8EECA1;
+  }
