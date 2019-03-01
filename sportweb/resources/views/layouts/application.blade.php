@@ -45,10 +45,7 @@
 
         @yield('content')
 
-        <footer class="footer">
-            <div class="container text-center">
-                <span class="text-muted">Sportweb</span>
-            </div>
-        </footer>
+        @include('layouts.footer', ['footer_text' => 'Spoertweb'])
+
     </body>
 </html>
