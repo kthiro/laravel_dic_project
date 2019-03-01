@@ -45,7 +45,7 @@
 
         @yield('content')
 
-        @include('layouts.footer', ['footer_text' => 'Spoertweb'])
+        @include('subviews.footer', ['footer_text' => 'Spoertweb'])
 
     </body>
 </html>
