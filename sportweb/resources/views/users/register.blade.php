@@ -7,10 +7,10 @@
 @endsection
 
 @section('content') <!-- TODO: インデント要整頓 -->
-        <div class="jumbotron user">
-            <h1 class="text-white">利用開始登録</h1>
-            <hr class="my-4">
-        </div>
+
+    @component('components.content_header')
+        @slot('content_title', '新規会員登録')
+    @endcomponent
         
         <div class="container-fluid">
             <div class="row justify-content-center">
