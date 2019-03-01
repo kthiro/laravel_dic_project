@@ -20,7 +20,7 @@ class UsersController extends Controller
             'info_content' => ''
             ], 
             ['label_attribute_name' => 'email', 
-            'label_content' => 'メールアドレス',
+            'label_content' => 'メールアドレス', 
             'input_attribute_id' => '',  
             'input_attribute_type' => 'text', 
             'input_attribute_name' => 'email', 

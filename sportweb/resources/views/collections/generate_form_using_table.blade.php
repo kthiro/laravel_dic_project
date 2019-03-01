@@ -6,11 +6,11 @@
     </td>
     <td>
         <input
-            id         ="{{$form_element['input_attribute_id']       }}"
-            type       ="{{$form_element['input_attribute_type']       }}"
-            name       ="{{$form_element['input_attribute_name']       }}"
-            value      ="{{$form_element['input_attribute_value']      }}"
-            class      ="form-control"
+            id="{{$form_element['input_attribute_id']}}"
+            type="{{$form_element['input_attribute_type']}}"
+            name="{{$form_element['input_attribute_name']}}"
+            value="{{$form_element['input_attribute_value']}}"
+            class="form-control"
             placeholder="{{$form_element['input_attribute_placeholder']}}"
         >
         <small class="text-info" id="{{$form_element['info_attribute_id']}}">
@@ -18,4 +18,4 @@
         </small>
     </td>
 </tr>
-                                
+               
