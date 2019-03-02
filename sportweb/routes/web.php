@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('top', 'TopsController@index'); // "/rop"へのリクエストを受けたら、"TopsController"の"index"アクションを呼ぶ
