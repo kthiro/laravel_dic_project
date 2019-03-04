@@ -34,7 +34,7 @@
                             <a class='nav-link' href='/users/login_form'>ログイン<span class='sr-only'>(current)</span></a>
                         </li>
                         <li class='nav-item'>
-                            <a class='nav-link' href='/users/new'>利用開始登録<span class='sr-only'>(current)</span></a>
+                            <a class='nav-link' href='/users/register'>利用開始登録<span class='sr-only'>(current)</span></a>
                         </li>
                     </ul>
 
