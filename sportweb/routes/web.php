@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('top', 'TopsController@index'); // "/rop"へのリクエストを受けたら、"TopsController"の"index"アクションを呼ぶ
+Route::get('top', 'TopsController@index');
+
+Route::get('/users/register', 'UsersController@register');
