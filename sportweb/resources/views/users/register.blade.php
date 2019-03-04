@@ -6,7 +6,7 @@
     <script src="/js/users.js"></script>
 @endsection
 
-@section('content') <!-- TODO: インデント要整頓 -->
+@section('content')
 
     @component('components.content_header')
         @slot('content_title', '新規会員登録')
