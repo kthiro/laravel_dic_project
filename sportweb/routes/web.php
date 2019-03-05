@@ -14,5 +14,6 @@
 Route::get('top', 'TopsController@index');
 
 use App\Http\Middleware\UserRegisterFormMiddleware;
-Route::get('/users/register', 'UsersController@register')
+Route::get('users/register', 'UsersController@register')
     ->middleware(UserRegisterFormMiddleware::class);
+Route::post('users/confirm', 'UsersController@confirm');

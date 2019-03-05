@@ -15,7 +15,8 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
-                <form method="POST" action="./confirm">
+                <form method="POST" action="/users/confirm">
+                    {{ csrf_field() }}
                     <table class="table table-hover">
                         <tbody>
                             @each('collections.generate_form_using_table', $form_elements, 'form_element')

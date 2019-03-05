@@ -28,7 +28,7 @@
                 <div id='nav_menu'>
                     <ul class='navbar-nav mr-auto'>
                         <li class='nav-item'>
-                            <a class='nav-link' href='/'>ホーム<span class='sr-only'>(current)</span></a>
+                            <a class='nav-link' href='/top'>ホーム<span class='sr-only'>(current)</span></a>
                         </li>
                         <li class='nav-item'>
                             <a class='nav-link' href='/users/login_form'>ログイン<span class='sr-only'>(current)</span></a>
