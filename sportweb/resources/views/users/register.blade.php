@@ -15,7 +15,11 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
-                <form method="POST" action="./confirm">
+                <form method="POST" action="/users/confirm">
+                    {{ csrf_field() }}
+                    @if (count($errors) > 0)
+                        <p class='text-danger'>入力内容に誤りがありましたので訂正して再度送信してください。</p>
+                    @endif
                     <table class="table table-hover">
                         <tbody>
                             @each('collections.generate_form_using_table', $form_elements, 'form_element')
