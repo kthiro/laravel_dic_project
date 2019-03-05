@@ -38,4 +38,5 @@ cd /vagrant && curl -sS https://getcomposer.org/installer | php && sudo mv compo
 composer global require laravel/installer
 
 # パスの追加(laravelコマンドを使用できるようにする)
+# TODO: 恒久的なパスとするためには、 ~/.profile 内での定義が必要
 export PATH="$PATH:~/.config/composer/vendor/bin/"

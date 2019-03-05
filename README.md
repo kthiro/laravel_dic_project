@@ -42,7 +42,7 @@
     ```
 2. Laravelのプロジェクトディレクトリ（sportweb/ ディレクトリ）で composer のインストール
     ```
-    cd sportweb
+    cd /vagrant/sportweb
     composer install
     ```
 3. アプリに必要なDBと、DB操作用ユーザーを作成する。
@@ -57,6 +57,10 @@
     ```
     cd /vagrant && mv env_sample.sh env.sh
     chmod u+x create_db.sh && ./create_db.sh
+    ```
+4. マイグレーションを実行する
+    ```
+    cd /vagrant/sportweb && php artisan migrate
     ```
 
 -----------------------
