@@ -48,6 +48,7 @@
 3. アプリに必要なDBと、DB操作用ユーザーを作成する。
     * ` sportweb/.env ` の次の箇所を自身の環境用に変更する。
         * DB_HOST
+            * 本アプリでは、特別な事情がない場合 ` localhost ` に指定する必要があります。
         * DB_PORT
         * DB_DATABASE
         * DB_USERNAME
