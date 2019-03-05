@@ -3,13 +3,13 @@
 ホストOSにVirtualBoxとVagrantを使用して仮想環境を構築し、ゲストOSとしてUbuntuを使用。
 ゲストOS上にnginxとPHP、MySQLをインストールし、アプリケーションフレームワークとしてLaravelを使用する開発環境を構築。  
 
-* ホストOSはOS X El Capitan バージョン 10.11.6 を使用
+* ホストOSはOS Mojave バージョン 10.14.3 を使用
 * ゲストOSはUbuntu 16.04を使用
 
 ## インストールしたソフトウェアについて
 
 ### ホストOS上でインストールしたもの
-* VirtualBox バージョン 6.0.0
+* VirtualBox バージョン 6.0.4
 * vagrant バージョン 2.2.2
 
 ### ゲストOS上でインストールしたもの
@@ -40,7 +40,13 @@
     ```
     cd /vagrant && chmod u+x install_guestos.sh && ./install_guestos.sh
     ```
-2. Laravelのプロジェクトディレクトリ（sportweb/ ディレクトリ）で composer のインストール
+2. アプリに必要なDBと、DB操作用ユーザーを作成する
+    * 自身の環境用に ` env_sample.sh ` を編集した後、次のコードを実行する。
+    ```
+    mv env_sample.sh env.sh
+    chmod u+x create_db.sh && ./create_db.sh
+    ```
+3. Laravelのプロジェクトディレクトリ（sportweb/ ディレクトリ）で composer のインストール
     ```
     cd sportweb
     composer install
