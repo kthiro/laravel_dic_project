@@ -40,17 +40,25 @@
     ```
     cd /vagrant && chmod u+x install_guestos.sh && ./install_guestos.sh
     ```
-2. アプリに必要なDBと、DB操作用ユーザーを作成する
-    * 自身の環境用に ` env_sample.sh ` を編集した後、次のコードを実行する。
-    ```
-    mv env_sample.sh env.sh
-    chmod u+x create_db.sh && ./create_db.sh
-    ```
-3. Laravelのプロジェクトディレクトリ（sportweb/ ディレクトリ）で composer のインストール
+2. Laravelのプロジェクトディレクトリ（sportweb/ ディレクトリ）で composer のインストール
     ```
     cd sportweb
     composer install
     ```
+3. アプリに必要なDBと、DB操作用ユーザーを作成する。
+    * ` sportweb/.env ` の次の箇所を自身の環境用に変更する。
+        * DB_HOST
+        * DB_PORT
+        * DB_DATABASE
+        * DB_USERNAME
+        * DB_PASSWORD
+    * ` env_sample.sh ` も自身の環境用に変更する。
+    * 次のコマンドを実行する。
+    ```
+    cd /vagrant && mv env_sample.sh env.sh
+    chmod u+x create_db.sh && ./create_db.sh
+    ```
+
 -----------------------
 ### アプリケーションの起動確認
 1. ゲストOS上でLaravelサーバーの起動
