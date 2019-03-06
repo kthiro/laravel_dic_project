@@ -6,7 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
-    public $fillable = ['name', 'email', 'password', 'password_confirmation'];
+    // ストロングパラメータ
+    public $fillable = [
+        'name',
+        'email',
+        'password',
+        'password_confirmation',
+        'profile_image',
+        'sport_event',
+        'sport_event_career',
+        'area',
+        'sex',
+        'intorduction'
+    ];
+
     public static $rigistration_validation_rule = [
         'name' => 'required | max:30',
         'email' => 'required | email | max:255',

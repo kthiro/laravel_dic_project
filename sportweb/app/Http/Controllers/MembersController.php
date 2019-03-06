@@ -26,8 +26,20 @@ class MembersController extends Controller
         unset($member_params['_token']);
 
         $member = new Member($member_params);
-        error_log(var_export($member, 1));
 
         return view('members.confirm', ['member' => $member]);
     }
+
+    public function create(Request $request)
+    {
+        $member_params = $request->all();
+        unset($member_params['_token']);
+
+        $member = new Member($member_params);
+        $member->save();
+        // 初回登録時$member_paramsでは受け取らないカラムには、DB側でデフォルト値を定義してある
+
+        return redirect('/members/register_form');
+    }
+
 }
