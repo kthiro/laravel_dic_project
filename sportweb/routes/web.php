@@ -14,8 +14,8 @@
 Route::get('top', 'TopsController@index');
 
 use App\Http\Middleware\MemberRegisterFormMiddleware;
-Route::get('members/register_form', 'MembersController@register')
+Route::match(['get', 'post'], 'members/register_form', 'MembersController@register')
     ->middleware(MemberRegisterFormMiddleware::class);
-Route::post('members/register_form', 'MembersController@register');
 Route::post('members/confirm', 'MembersController@confirm');
 Route::post('members/create', 'MembersController@create');
+Route::get('members/show/{id?}', 'MembersController@show');

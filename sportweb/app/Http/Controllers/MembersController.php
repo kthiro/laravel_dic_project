@@ -42,4 +42,14 @@ class MembersController extends Controller
         return redirect('/members/register_form');
     }
 
+    public function show(Request $request)
+    {
+        $member_params=$request->all();
+        error_log(var_export($member_params, 1));
+
+        $member = Member::find($member_params['id']);
+
+        return view('members.show', ['member' => $member]);
+    }
+
 }
