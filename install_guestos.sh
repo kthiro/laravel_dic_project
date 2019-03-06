@@ -22,12 +22,6 @@ sudo apt-get -y install php-pear php7.3-curl php7.3-dev php7.3-gd php7.3-mbstrin
 # MySOLのインストール
 sudo apt-get -y install mysql-server mysql-client
 
-# mysqld.cnfの編集：ホストOSからもMySQLへアクセスできるよう、bind addressを192.168.37.10へ変更
-sudo sed -i 's/127.0.0.1/192.168.38.10/' /etc/mysql/mysql.conf.d/mysqld.cnf
-
-# mysqlの再起動
-sudo service mysql restart
-
 # composerのインストール
 cd /vagrant && curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
 

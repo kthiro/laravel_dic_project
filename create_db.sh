@@ -1,6 +1,12 @@
 #!/bin/bash
 
-# 環境変数の読み込み
+# mysqld.cnfの編集：ホストOSからもMySQLへアクセスできるよう、bind addressを192.168.37.10へ変更
+sudo sed -i 's/127.0.0.1/192.168.38.10/' /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# mysqlの再起動
+sudo service mysql restart
+
+# env.shで定義した環境変数の読み込み
 sudo chmod 700  env.sh && source ./env.sh
 
 # 外部接続用ユーザー、アプリDB、アプリDB操作用ユーザーの作成と権限付与
