@@ -11,11 +11,11 @@
     @component('components.content_header')
         @slot('content_title', '新規会員登録')
     @endcomponent
-        
+
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
-                <form method="POST" action="/users/confirm">
+                <form method="POST" action="/members/confirm">
                     {{ csrf_field() }}
                     @if (count($errors) > 0)
                         <p class='text-danger'>入力内容に誤りがありましたので訂正して再度送信してください。</p>
@@ -33,5 +33,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection

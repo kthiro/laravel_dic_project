@@ -15,11 +15,11 @@
                     <tbody>
                         <tr>
                             <td>ユーザーネーム</td>
-                            <td>{{$user['name']}}</td>
+                            <td>{{$member->name}}</td>
                         </tr>
                         <tr>
                             <td>メールアドレス</td>
-                            <td>{{$user['email']}}</td>
+                            <td>{{$member->email}}</td>
                         </tr>
                         <tr>
                             <td>パスワード</td>
@@ -27,7 +27,7 @@
                         </tr>
                     </tbody>
                 </table>
-                    
+
                 <!-- 以降は未着手
                     <div class="text-center">
                         <div class="btn-group">
@@ -43,7 +43,7 @@
                                 <input type="hidden" name="introduction" value="未登録">
                                 <input type="submit" name="subscribe" value="登録する" class="btn btn-outline-primary btn-sm" >
                             </form>
-                            
+
                             <form method="POST" action="./new">
                                 {foreach $user as $key => $value}
                                     <input type="hidden" name="{$key}" value="{$value}">

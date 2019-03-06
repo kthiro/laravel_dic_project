@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="stylesheet" href="/css/sticky-footer-navbar.css">
         <link rel="stylesheet" href="/css/application.css">
-        
+
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -31,10 +31,10 @@
                             <a class='nav-link' href='/top'>ホーム<span class='sr-only'>(current)</span></a>
                         </li>
                         <li class='nav-item'>
-                            <a class='nav-link' href='/users/login_form'>ログイン<span class='sr-only'>(current)</span></a>
+                            <a class='nav-link' href='#'>ログイン<span class='sr-only'>(current)</span></a>
                         </li>
                         <li class='nav-item'>
-                            <a class='nav-link' href='/users/register'>利用開始登録<span class='sr-only'>(current)</span></a>
+                            <a class='nav-link' href='/members/register_form'>利用開始登録<span class='sr-only'>(current)</span></a>
                         </li>
                     </ul>
 

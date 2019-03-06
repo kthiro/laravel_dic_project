@@ -13,7 +13,7 @@
 
 Route::get('top', 'TopsController@index');
 
-use App\Http\Middleware\UserRegisterFormMiddleware;
-Route::get('users/register', 'UsersController@register')
-    ->middleware(UserRegisterFormMiddleware::class);
-Route::post('users/confirm', 'UsersController@confirm');
+use App\Http\Middleware\MemberRegisterFormMiddleware;
+Route::get('members/register_form', 'MembersController@register')
+    ->middleware(MemberRegisterFormMiddleware::class);
+Route::post('members/confirm', 'MembersController@confirm');
