@@ -19,5 +19,8 @@ Route::match(['get', 'post'], 'members/register_form', 'MembersController@regist
 Route::post('members/confirm', 'MembersController@confirm');
 Route::post('members/create', 'MembersController@create');
 Route::get('members/index', 'MembersController@index');
-Route::get('members/show/{id?}', 'MembersController@show');
-Route::get('members/edit/{id?}', 'MembersController@edit');
+Route::get('members/show', 'MembersController@show');
+Route::get('members/edit', 'MembersController@edit');
+Route::post('members/update', 'MembersController@update')
+    ->middleware('members_update');
+// Route::middleware(['member_update'])->group(function(){

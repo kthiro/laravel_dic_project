@@ -68,4 +68,11 @@ class MembersController extends Controller
         );
     }
 
+    public function update(Request $request)
+    {
+        $member = Member::find($request->id);
+        $member->fill($request->member_params)->save();
+
+        return redirect("/members/show/?id={$member->id}");
+    }
 }

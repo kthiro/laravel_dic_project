@@ -23,6 +23,12 @@
                         <div class="card-body">
                             <div class="card-text">
                                 <form method="POST" action="/members/update" enctype="multipart/form-data"> <!-- サーバー側にファイルアップロードを明示するために、enctype指定が必要 -->
+                                    {{ csrf_field() }}
+                                    @if (count($errors) > 0)
+                                        @foreach ($errors->all() as $msg)
+                                            <p class='text-danger'>{{$msg}}</p>
+                                        @endforeach
+                                    @endif
                                     <table class="table table-hover">
                                         <tbody>
                                             <tr>
@@ -30,8 +36,11 @@
                                                     <label name="profile_image">プロフィール画像を変更する場合は選択</label>
                                                 </td>
                                                 <td>
+                                                    {{--
+                                                    <!-- TODO:ファイルアップロードは別途実装 -->
                                                     <input type="hidden" name="max_file_size" value="1048576">
                                                     <input type="file" name="img_upload">
+                                                    --}}
                                                 </td>
                                             </tr>
                                             <tr>
