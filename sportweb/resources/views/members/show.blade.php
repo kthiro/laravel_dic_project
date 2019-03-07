@@ -42,10 +42,11 @@
                     <p><a href="/members/edit?id={{$member->id}}">ユーザー情報編集</a></p>
                     <div>
                         <!-- TODO:確認ボタンの挙動を確かめる必要あり！ -->
-                        <form method="POST" action="/members/delete" onsubmit="confirmSubmit ('本当に削除してよろしいですか')">
-                            <input type="hidden" name="_method" value="delete">
+                        <form method="POST" action="/members/delete">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="_method" value="delete"> <!-- この1行でルーティングでdeleteのHTTPメソッド指定ができる -->
                             <input type="hidden" name="id" value="{{$member->id}}">
-                            <input id="delete_button" type="submit" value="ユーザーアカウントの削除">
+                            <input id="delete_btn" type="submit" value="ユーザーアカウントの削除">
                         </form>
                     </div>
                 </div>

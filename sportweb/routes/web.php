@@ -19,6 +19,7 @@ Route::middleware(['members'])->group(function(){
     Route::get('members/index', 'MembersController@index');
     Route::get('members/show', 'MembersController@show');
     Route::get('members/edit', 'MembersController@edit');
+    Route::delete('members/delete', 'MembersController@delete');
 
     Route::middleware(['members_validation'])->group(function(){
         Route::post('members/confirm', 'MembersController@confirm');

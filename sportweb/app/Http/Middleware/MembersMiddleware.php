@@ -21,25 +21,26 @@ class MembersMiddleware
 
         switch ($uri) {
             case 'members/register':
-                $members = new Member();
+                $member = new Member();
                 break;
 
             case 'members/confirm':
             case 'members/create':
-                $members = new Member($request->except('_token'));
+                $member = new Member($request->except('_token'));
                 break;
 
             case 'members/index':
-                $members = Member::all();
+                $member = Member::all();
                 break;
 
             case 'members/show':
             case 'members/edit':
-                $members = Member::find($request->id);
+            case 'members/delete':
+                $member = Member::find($request->id);
                 break;
 
             case 'members/update':
-                $members = Member::find($request->id);
+                $member = Member::find($request->id);
 
                 // updateだけはパラメータの加工も行う。
                 // 値がNULLのパラメータを除去した$member_paramsを真の更新データとして定義する。
@@ -49,12 +50,11 @@ class MembersMiddleware
                         $member_params[$key] = $value;
                     }
                 }
-                error_log(var_export("5", 1));
                 $request->merge(['member_params' => $member_params]);
                 break;
         }
 
-        $request->merge(['members' => $members]);
+        $request->merge(['member' => $member]);
         return $next($request);
     }
 }
