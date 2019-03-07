@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
-    // ストロングパラメータ
     public $fillable = [
         'name',
         'email',
@@ -26,4 +25,10 @@ class Member extends Model
         'password' => 'required | min:8',
         'password_confirmation' => 'required | same:password'
     ];
+
+    public static $sport_event_career_options = [
+        0 => "未選択", 1 => "１年未満", 2 => "３年未満", 3 => "５年未満", 4 => "１０年未満", 5 => "１０年以上"
+    ];
+
+    public static $sex_options = [0 => "未選択", 1 => "男性", 2 => "女性"];
 }

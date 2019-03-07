@@ -51,12 +51,21 @@ class MembersController extends Controller
 
     public function show(Request $request)
     {
-        $member_params=$request->all();
-        error_log(var_export($member_params, 1));
-
-        $member = Member::find($member_params['id']);
-
+        $member = Member::find($request->query('id'));
         return view('members.show', ['member' => $member]);
+    }
+
+    public function edit(Request $request)
+    {
+        $member = Member::find($request->query('id'));
+        return view(
+            'members.edit',
+            [
+                'member' => $member,
+                'sport_event_careers' => Member::$sport_event_career_options,
+                'sexes' => Member::$sex_options
+            ]
+        );
     }
 
 }

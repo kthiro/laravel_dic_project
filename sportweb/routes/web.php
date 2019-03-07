@@ -20,3 +20,4 @@ Route::post('members/confirm', 'MembersController@confirm');
 Route::post('members/create', 'MembersController@create');
 Route::get('members/index', 'MembersController@index');
 Route::get('members/show/{id?}', 'MembersController@show');
+Route::get('members/edit/{id?}', 'MembersController@edit');

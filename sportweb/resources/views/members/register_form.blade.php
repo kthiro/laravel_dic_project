@@ -3,7 +3,7 @@
 @section('title', 'Sportweb 新規会員登録')
 
 @section('additional_js')
-    <script src="/js/users.js"></script>
+    <script src="/js/members.js"></script>
 @endsection
 
 @section('content')
