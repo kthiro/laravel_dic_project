@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class MemberRegisterFormMiddleware
+class MembersRegisterMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,6 +15,7 @@ class MemberRegisterFormMiddleware
      */
     public function handle($request, Closure $next)
     {
+        // Bdforアクション：会員新規登録画面のHTMLのformタグを作成するために、中身の属性を定義する
         $form_elements = [
             ['label_attribute_name' => 'name',
             'label_content' => 'ユーザーネーム',

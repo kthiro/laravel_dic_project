@@ -39,7 +39,7 @@
                             <input type="submit" name="subscribe" value="登録する" class="btn btn-outline-primary btn-sm" >
                         </form>
 
-                        <form method="POST" action="/members/register_form">
+                        <form method="POST" action="/members/register">
                             {{ csrf_field() }}
                             <input type="hidden" name="name" value="{{$member->name}}">
                             <input type="hidden" name="email" value="{{$member->email}}">

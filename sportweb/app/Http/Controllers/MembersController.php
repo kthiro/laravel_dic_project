@@ -9,10 +9,9 @@ class MembersController extends Controller
 {
     public function register(Request $request)
     {
-        $member = new Member();
-        return view('members.register_form',
+        return view('members.register',
             [
-                'member' => $member,
+                'member' => $request->members,
                 'form_elements' => $request->form_elements
             ]
         );
@@ -20,48 +19,32 @@ class MembersController extends Controller
 
     public function confirm(Request $request)
     {
-        $this->validate($request, Member::$rigistration_validation_rule);
-
-        $member_params = $request->all();
-        unset($member_params['_token']);
-
-        $member = new Member($member_params);
-
-        return view('members.confirm', ['member' => $member]);
+        return view('members.confirm', ['member' => $request->members]);
     }
 
     public function create(Request $request)
     {
-        $member_params = $request->all();
-        unset($member_params['_token']);
+        ($request->members)->save(); // 初回登録時に入力不要なカラムには、DB側でデフォルト値を定義してある
 
-        $member = new Member($member_params);
-        $member->save();
-        // 初回登録時$member_paramsでは受け取らないカラムには、DB側でデフォルト値を定義してある
-
-        return redirect('/members/register_form');
+        return redirect('/members/register');
     }
 
     public function index(Request $request)
     {
-        $members = Member::all();
-
-        return view('members.index', ['members' => $members]);
+        return view('members.index', ['members' => $request->members]);
     }
 
     public function show(Request $request)
     {
-        $member = Member::find($request->query('id'));
-        return view('members.show', ['member' => $member]);
+        return view('members.show', ['member' => $request->members]);
     }
 
     public function edit(Request $request)
     {
-        $member = Member::find($request->query('id'));
         return view(
             'members.edit',
             [
-                'member' => $member,
+                'member' => $request->members,
                 'sport_event_careers' => Member::$sport_event_career_options,
                 'sexes' => Member::$sex_options
             ]
@@ -70,7 +53,7 @@ class MembersController extends Controller
 
     public function update(Request $request)
     {
-        $member = Member::find($request->id);
+        $member = $request->members;
         $member->fill($request->member_params)->save();
 
         return redirect("/members/show/?id={$member->id}");

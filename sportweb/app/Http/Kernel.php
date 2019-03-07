@@ -60,7 +60,10 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'members_update' => \App\Http\Middleware\MembersUpdateMiddleware::class
+        // 以降より個別定義エリア
+        'members' => \App\Http\Middleware\MembersMiddleware::class,
+        'members_register' => \App\Http\Middleware\MembersRegisterMiddleware::class,
+        'members_validation' => \App\Http\Middleware\MembersValidationMiddleware::class
     ];
 
     /**
