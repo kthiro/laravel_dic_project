@@ -42,6 +42,13 @@ class MembersController extends Controller
         return redirect('/members/register_form');
     }
 
+    public function index(Request $request)
+    {
+        $members = Member::all();
+
+        return view('members.index', ['members' => $members]);
+    }
+
     public function show(Request $request)
     {
         $member_params=$request->all();

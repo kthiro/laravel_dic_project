@@ -18,4 +18,5 @@ Route::match(['get', 'post'], 'members/register_form', 'MembersController@regist
     ->middleware(MemberRegisterFormMiddleware::class);
 Route::post('members/confirm', 'MembersController@confirm');
 Route::post('members/create', 'MembersController@create');
+Route::get('members/index', 'MembersController@index');
 Route::get('members/show/{id?}', 'MembersController@show');
