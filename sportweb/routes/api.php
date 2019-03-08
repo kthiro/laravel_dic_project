@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Member;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,12 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('/members/search', function(Request $request){
+    $members = Member::where('name'       , 'like', "%{$request->name}%")
+                     ->where('sport_event', 'like', "%{$request->sport_event}%")
+                     ->get();
+
+    return $members->toArray();
 });
