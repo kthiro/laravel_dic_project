@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Member;
+use App\Http\Resources\MemberResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,5 @@ Route::get('/members/search', function(Request $request){
                      ->where('sport_event', 'like', "%{$request->sport_event}%")
                      ->get();
 
-    return $members->toArray();
+    return MemberResource::collection($members);
 });

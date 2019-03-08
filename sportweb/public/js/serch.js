@@ -14,9 +14,9 @@ function getUsers(){
         }
     })
     .done(function(users){
-        // alert(JSON.stringify(users)); // for debug
+        alert(JSON.stringify(users)); // for debug
         let user_search_results = "";
-        $.each(users, function(key, user){
+        $.each(users.data, function(key, user){
             user_search_results = user_search_results +
                 "<div class='col-sm-6 col-md-4 col-lg-3'>\
                     <div class='card sm-6 mb-4 lg-3 shadow'>\
